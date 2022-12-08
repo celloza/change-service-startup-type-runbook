@@ -7,14 +7,7 @@
 
   If the service is already set to the supplied Startup Type, a Warning is generated, but the runbook does not fail.
 
-  Exit codes are as follows:
-
-  0 - The script executed succesfully.
-  1 - Invalid parameters specified.
-  2 - Could not successfully change the startup type.
-  4 - No or multiple services found using the provided name.
-  99 - Unhandled exception.
-
+.OUTPUTS
   The output is formatted as JSON for easy consumption in a LogicApp. Sample output is provided below:
 
   {
@@ -22,6 +15,14 @@
 	"message": "Startup Type changed successfully.",
 	"errorCode": 0
   }
+
+  Exit codes are as follows:
+
+  0 - The script executed succesfully.
+  1 - Invalid parameters specified.
+  2 - Could not successfully change the startup type.
+  4 - No or multiple services found using the provided name.
+  99 - Unhandled exception.
 
 .PARAMETER StartupType
    Mandatory, can be one of the following: Automatic, Manual, Disabled
